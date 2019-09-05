@@ -2,4 +2,112 @@
 
 /* 回答はここに書いてね */
 
+.wrapper{
+  font-size: 16px;
+}
+
+/* ------------------------------------------- */
+.clearfix::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.q7_1_text{
+  display:inline-block;
+  float:left;
+  /*widthを指定しなければfloatは機能しない*/
+  width:225px;
+  margin-left:50px;
+  /*デフォルトで親の幅が500pxと決まっている。そこに収める。*/
+  box-sizing: border-box;
+}
+
+.q7_1_text:first-child{
+  margin-left: 0px;
+}
+
+
+
+/* -------------------------------------------- */
+
+.q7_2{
+  /*デフォルトで親の幅が500pxと決まっている。そこに収める。*/
+  display:table;
+}
+.q7_2_container{
+  width:225px;
+  /*横並びにするカラム*/
+  display: table-cell;
+  /*垂直方向をそろえる*/
+  vertical-align: middle;
+  padding-left: 50px;
+}
+
+.q7_2_container:first-child{
+  padding-left: 0px;
+}
+
+/* -------------------------------------------- */
+.q7_3_container{
+  font-size: 0;
+  /*
+  inline-blockで要素をならべると余計な隙間ができるため、それを無くす。
+  ただ、このままでは中の要素も0になるため、子要素は個別にサイズを指定する
+  */
+}
+
+.q7_3_text{
+  font-size: 16px;
+  width:225px;
+  display:inline-block;/*widthを指定可能かつ横並び*/
+  margin-left:50px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.q7_3_text:first-child{
+  margin-left: 0px;
+}
+
+/* ------------------------------------ */
+.q7_4_container{
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.q7_4_text{
+  width:225px;
+  box-sizing: border-box;
+}
+
+.q7_4_container:first-child{
+  align-items: flex-end;
+}
+
+/* ------------------------------------ */
+.q7_5{
+  font-size: 0;
+}
+.q7_5_content_1{
+  width:300px;
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: top;
+}
+.q7_5_content_2{
+  width:100%;
+  display: inline-block;
+  padding-left: 350px;
+  /*
+  マージンレフト＝左に間隔を設ける分要素は右に移動
+  ネガティブマージンレフト＝要素がその逆（左）に移動。その際、同列の要素や親要素の前に出る　
+  */
+  margin-left: -300px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
+
 /* 回答はここに書いてね */

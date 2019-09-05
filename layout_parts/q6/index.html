@@ -42,7 +42,7 @@
             <!-- 新たにタグは追加しなくてもできます。 -->
             <div class="q6__box">
               <div>
-                <p>text-align</p>
+                <p class="q6_1">text-align</p>
               </div>
             </div>
             <!-- Q6-1の回答はここに書いてね -->
@@ -54,7 +54,7 @@
             <!-- Q6-1の回答はここに書いてね -->
             <!-- 新たにタグは追加しなくてもできます。 -->
             <div class="q6__box">
-              <p>margin</p>
+              <p class="q6_1">margin</p>
             </div>
             <!-- Q6-1の回答はここに書いてね -->
           </div>
@@ -75,22 +75,32 @@
                この問題もHTMLが用意されているのでclassを付与してスタイルをあててください。すでにふられているclassにスタイルをあてることはせず、新規でclassを作ってください。
           -->
           <!--
+               方法⓵：親要素にdisplay: table-cellを適応させることでtd要素に変化させ、
+               text-align（水平方向）だけでなくvertical-align（垂直方向）の設定も可能にする。
+
                ■この問題で使う大事なプロパティ
-               ・display: table
-               ・display: table-cell
-               ・display: inline-block
-               ・vertical-align
+
+               ・display: table　→「どこの真ん中に寄せたいのか」の「どこの」を司る要素に適用する。
+               ・display: table-cell　→中央寄せしたい親要素をｔｄ要素に変化させることで、中身にvertical-alignを適用。
+               ・display: inline-block　→中央寄せする要素をインラインブロック要素にして、text-alignを有効にする
+               ・vertical-align　→親要素に適用し、垂直方向の設定。
           -->
           <!-- Q6-2の回答はここに書いてね -->
           <!-- すでについてるクラスにはstyleを指定しない。styleをつける場合は自分で新たにクラスをつけること -->
           <!-- 新たにタグは追加しなくてもできます。 -->
-          <div class="q6 q6--around">
-            <div>
-              <p>table</p>
+          <div class="q6 q6--around q6_2_1">
+            <div class="q6_2_1_conteiner">
+              <p class="q6_2_1_text">table</p>
             </div>
           </div>
           <!-- Q6-2の回答はここに書いてね -->
           <!--
+          方法②：flexbox(display:flex)を利用した中央寄せ。
+          flexboxとは？→ある要素に定義するだけで、その直下の要素が並列になる便利なスタイルです。
+　　　　　　　　　　　　　シンプルな導入であれば、CSSで「display:flex」というスタイルを指定するだけです。
+                        中央寄せは、並列の場合の左右方向は justify-content: center;で、
+                        上下方向は、align-items: center;で指定します。
+
                ■この問題で使う大事なプロパティ
                ・display: flex
                ・align-items
@@ -99,13 +109,17 @@
           <!-- Q6-2の回答はここに書いてね -->
           <!-- すでについてるクラスにはstyleを指定しない。styleをつける場合は自分で新たにクラスをつけること -->
           <!-- 新たにタグは追加しなくてもできます。 -->
-          <div class="q6 q6--around">
-            <p>flex</p>
+          <div class="q6 q6--around q6_2_2">
+            <p class="q6_2_2_text">flex</p>
           </div>
           <!-- Q6-2の回答はここに書いてね -->
           <div class="q6 q6--position">
             <!--
                  中央寄せする要素のサイズが固定のとき
+                 方法⓷: position:absoluteとmargin:auto の組み合わせ。
+                 横方向のみであれば、position:absolute;はいりません。
+                 縦方向を中央寄せする場合、position:absolute;と、
+                 top,bottom,left,rightそれぞれにauto以外の値(0)を指定する必要があります。
 
                  ■この問題で使う大事なプロパティ
                  ・position
@@ -114,13 +128,15 @@
             <!-- Q6-2の回答はここに書いてね -->
             <!-- すでについてるクラスにはstyleを指定しない。styleをつける場合は自分で新たにクラスをつけること -->
             <!-- 新たにタグは追加しなくてもできます。 -->
-            <div class="q6__box is-stable">
-              <p class="q6__box__inner">position固定</p>
+            <div class="q6__box is-stable q6_2_3">
+              <p class="q6__box__inner q6_2_3_text">position固定</p>
             </div>
             <!-- Q6-2の回答はここに書いてね -->
             <!--
-                 中央寄せする要素のサイズが可変のとき
+            方法⓸transformで中央寄せ　→要素の幅が可変の場合は％で指定する。
 
+
+                 中央寄せする要素のサイズが可変のとき→transform
                  ■この問題で使う大事なプロパティ
                  ・position
                  ・transform
@@ -128,8 +144,8 @@
             <!-- Q6-2の回答はここに書いてね -->
             <!-- すでについてるクラスにはstyleを指定しない。styleをつける場合は自分で新たにクラスをつけること -->
             <!-- 新たにタグは追加しなくてもできます。 -->
-            <div class="q6__box is-flexible">
-              <p class="q6__box__inner">position可変</p>
+            <div class="q6__box is-flexible q6_2_4">
+              <p class="q6__box__inner q6_2_4_text">position可変</p>
             </div>
             <!-- Q6-2の回答はここに書いてね -->
           </div>

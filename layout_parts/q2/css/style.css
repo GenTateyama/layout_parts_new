@@ -1,5 +1,38 @@
 @charset "UTF-8";
 
 /* 回答はここに書いてね */
+*{box-sizing: border-box;}
+
+.clearfix::after{
+  clear:both;
+  content:"";
+  display:block;
+}
+
+.q2_content{
+  width: 940px;
+  background-color: #eff3f4;
+  margin: 0 auto;
+  padding:20px;
+}
+
+
+.content_img1{
+  float:left;
+  margin-right:20px;
+  margin-bottom: 10px;
+}
+.content_img2{
+  float:right;
+  margin-left:20px;
+  margin-bottom: 10px;
+}
+
+.content_text{
+  font-size: 18px;
+  line-height: 22px;
+  /*このままでは改行が行ギリギリではなく単語の切れ目でおこなわれてしまう。*/
+  word-break: break-all;
+}
 
 /* 回答はここに書いてね */

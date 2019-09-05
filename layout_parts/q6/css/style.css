@@ -1,5 +1,77 @@
 @charset "UTF-8";
 
+
 /* 回答はここに書いてね */
+
+.q6_1{
+  /*ブロックそのものを中央寄せ*/
+  margin: 0 auto;
+  /*中のテキストを中央寄せ*/
+  box-sizing: border-box;
+  text-align: center;
+  width: 90px;
+  padding: 10px;
+  background-color: #e6f2ff;
+}
+
+
+.q6_2_1{
+  /*
+  table-row・table-cellのサイズは、tableプロパティの大きさに依存する。
+  従って、サイズの基準となる要素にdisplay:tableを適用する。
+  */
+  display: table;
+}
+
+/*
+table関連プロパティの特徴
+1:単独でtable-row、table-cellの幅・高さを%で指定しても効果が出ない
+2:table-rowは、ピクセル（px）で指定しても幅に関しては効果が出ない（高さのみ）：幅は、中身（td、table-cell）しだいのため
+3:table-cellにサイズを指定しなかった場合、親要素がtableならばそのサイズいっぱいにまで広がる
+*/
+
+.q6_2_1_conteiner{
+  display: table-cell;  /* 中央寄せしたい要素の親要素*/
+  vertical-align: middle;/*垂直方向の中央寄せ*/
+  text-align: center;
+}
+
+.q6_2_1_text,.q6_2_2_text{
+  display:inline-block;/*text-alignを有効にする*/
+  background-color: #fff;
+  padding:10px;
+}
+
+.q6_2_2{
+  display: flex;
+  align-items: center;/*垂直方向の中央*/
+  justify-content: center;/*水平方向の中央*/
+}
+
+.q6_2_3{
+  position: relative;
+}
+.q6_2_3_text{
+  height:30px;
+  width:110px;
+  position:absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.q6_2_4{
+  position:relative;
+}
+.q6_2_4_text{
+  padding:10px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+}
+
 
 /* 回答はここに書いてね */

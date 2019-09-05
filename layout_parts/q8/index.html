@@ -32,26 +32,26 @@
           <!-- 新たにタグは追加しなくてもできます。 -->
           <div class="q8 q8--btn">
             <p class="q8__title">ー small ー</p>
-            <div>common</div>
-            <div>error</div>
-            <div>disabled</div>
-            <div>shadow</div>
+            <div class=" btn common small">common</div>
+            <div class="btn error small">error</div>
+            <div class="btn disabled small">disabled</div>
+            <div class="btn shadow small">shadow</div>
           </div>
 
           <div class="q8 q8--btn">
             <p class="q8__title">ー middle ー</p>
-            <div>common</div>
-            <div>error</div>
-            <div>disabled</div>
-            <div>shadow</div>
+            <div class="btn common middle">common</div>
+            <div class="btn error middle">error</div>
+            <div class="btn disabled middle">disabled</div>
+            <div class="btn shadow middle">shadow</div>
           </div>
 
           <div class="q8 q8--btn">
             <p class="q8__title">ー large ー</p>
-            <div>common</div>
-            <div>error</div>
-            <div>disabled</div>
-            <div>shadow</div>
+            <div class="btn common large">common</div>
+            <div class="btn error large">error</div>
+            <div class="btn disabled large">disabled</div>
+            <div class="btn shadow large">shadow</div>
           </div>
           <!-- 回答はここに書いてね -->
         </div>
@@ -63,13 +63,15 @@
           <!--
                Webサイトを作る際、コンタクトフォームを実装する機会がとても多くあります。
                ここで使われるタグは一般的にはデザインするのが難しいと言われていますが、それをやらないといけない状況は結構多いです。（簡単リセットされない、:focusや:activeを使う）
-               まずは元々タグにあてられているスタイルを解除して、フラットな状態にしてからスタイルを当てていくことが大事です。
+               まずは元々タグにあてられているスタイルを解除して、フラットな状態にしてからスタイルを当てていくことが大事です(appearance)。
 
                特にradioとcheckboxのチェックのスタイルが難しいと思います。
-               やり方として、既存のチェックは使わずに擬似要素でチェックのフィールドを再現します。:checkedを使えばチェックされているかどうかでスタイルを変えることができるので、これをうまく使いましょう。cssでは+（隣接セレクタ）というものも使わなくてはなりませんので、調べてみましょう。
+               やり方として、既存のチェックは使わずに擬似要素でチェックのフィールドを再現します。:checkedを使えばチェックされているかどうかでスタイルを変えることができるので、
+               これをうまく使いましょう。cssでは+（隣接セレクタ）というものも使わなくてはなりませんので、調べてみましょう。
                また、一番下のボタンはbuttonタグを使って実装しましょう。（<input type="submit">を使って実装することも可能です）
 
-               この課題では、実際にユーザーが入力した値を送れる状態まで作っていただきます。answerの方で確認していただきたいのですが、全ての入力フォームを適当に記述してsubmitボタンを押してみてください。URL欄の最後に「?name=...」という感じの文字列が追加されているのがわかると思います。（その?以降のものをパラメーターと呼びます。複数ある場合は?◯◯=□□&△△=××のように&繋ぎになります。◯◯や△△の部分はinputタグやselectタグのname属性が入ります。）
+               この課題では、実際にユーザーが入力した値を送れる状態まで作っていただきます。answerの方で確認していただきたいのですが、全ての入力フォームを適当に記述してsubmitボタンを押してみてください。
+               URL欄の最後に「?name=...」という感じの文字列が追加されているのがわかると思います。（その?以降のものをパラメーターと呼びます。複数ある場合は?◯◯=□□&△△=××のように&繋ぎになります。◯◯や△△の部分はinputタグやselectタグのname属性が入ります。）
                これが、入力した値を送信できている状態です。本来ではこの値をサーバーサイドで受け取ってフォームの処理をするのですが、今回はHTMLを使って送信するまでをやってもらいます。
                answerで入力した値を自分で作ったフォームに全く同じように入力した場合、URLが全く同じように変わる状態にしてください。（formのaction属性やmethod属性が関係してきます）
                また赤の*(アスタリスク)の部分は必須項目です。必須項目を空にしたまま送信しようとするとアラートが表示される処理も再現しましょう。
@@ -78,28 +80,142 @@
                ただ全ての答えを見るといったことはしないようにしましょう。
 
                ■この問題で使う大事なhtml要素
-               ・label
-               ・form
-               ・input(type="text")
-               ・input(type="radio")
-               ・input(type="checkbox")
-               ・textarea
-               ・select
-               ・button (inputも可能)
+               ・label →フォームの構成部品（一行テキストボックス・チェックボックス・ラジオボタン等）と、 その項目名（ラベル）を明確に関連付けるための要素。
+               　　　　 これによりチェックボックスやラジオボタンでは、 関連付けられたテキスト部分をクリックしてもチェックを付けることができるようになる。
+                       <LABEL>タグの使用方法は2通りあり、 1つは<LABEL>タグのfor属性の値と、フォーム部品のid属性の値を同じものにすることで両者を関連付ける方法。
+                       もう1つは<LABEL>～</LABEL>内にフォーム部品とテキストを含める方法。後者の方法は、Internet Explorer5や6には対応していないようなので、できるだけ前者を用いた方が良いだろう。
+
+               ・form　→<form>タグは、入力・送信フォームを作る際に使用します。 <form>～</form>の間に、 <input>・ <select>・ <textarea>等のタグで、
+                        一行テキストボックス・サブミットボタン・ラジオボタン・チェックボックス・セレクトボックス・テキストボックス等のフォーム部品を配置します。
+                        フォームに入力されたデータは、送信ボタンを押すことでウェブサーバーへ送信されます。 その際の送信先URLはaction属性で、
+                        データの送信方法はmethod属性で、送信するデータの形式はenctype属性でそれぞれ指定します。
+                         ウェブサーバーへ送信されたデータのプログラム処理は、 HTMLやCSSではなくPHPやCGIなどのサーバーサイド・スクリプトで行います。
+
+               ・input(type="radio")　   →ラジオボタン（用意された選択肢の中から１つを選択できるボタン）の導入
+               ・input(type="checkbox")　→いくつかあるオプションから複数の項目を選択するのに使われる。通常、四角の中に空白（偽の場合）かチェックマーク（真の場合）が表示される形式である。
+                                         チェックボックスの隣にはその説明文が付与される。 チェックボックスの状態を反転させるには、チェックボックスまたはその説明文[1]上でマウスをクリックすればよい
+
+               ・input(type="text")    　          →１行のテキスト入力欄の導入
+               ・textarea　                        →複数行のテキスト入力欄の導入
+               ・select　                          →セレクトボックスの導入
+               ・button (input type="submitも可能)　→送信ボタンの導入
+
                ■この問題で使う大事なプロパティ
-               ・appearance(-webkit-appearance)
+               ・appearance(-webkit-appearance)　
+               　　→フォームで使用するinputやtextareaなどの要素はブラウザやデバイスによって見た目は異なりますが、
+               　　 予めボーダー・グラデーション・角丸といったスタイルが適用されています。特にこだわりがなければこのまま使用したり、
+               　　 多少手を加えるだけということもありますが、異なるブラウザやデバイスでも同じように表示させたい時にはこれらが邪魔に
+               　　 なってしまいます。このデフォルトの見栄えを取り除きたいという時に便利なのがappearanceというプロパティでデフォルトのスタイルを削除することができます。
+
                ・outline
+               　　→outlineプロパティは、アウトラインのスタイル・太さ・色をまとめて指定する際に使用します。 スタイル・太さ・色のうち、
+               　　 指定する値を任意の順序でスペースで区切って記述します。
+                    borderプロパティとは異なり、outlineプロパティには上下左右の概念はありません。
+                    アウトラインをつける（縁取りをする）対象が丸い場合には、アウトラインも丸くなります。
+
                ■この問題で使う大事な擬似要素
-               ・:checked
-               ・:focus
-               ・:active
+               ・:checked →チェック（選択）されているユーザーインターフェース要素にスタイルを与える。
+　　　　　　　　　　　　　　　ユーザーインターフェース要素とは、上記のフォーム部品などのユーザーが操作できる要素のこと。
+               ・:focus   →フォーカスされた要素を指定してスタイルを与える
+               ・:active　→クリックされた要素を指定してスタイルを与える
                ・:before
                ・:after
+
+               ■大事な用語
+               ・パラメータ(formのaction属性やmethod属性が関係する)
+               ・+（隣接セレクタ） →直後に隣接している要素にスタイルを適用する
+            　   書式：　　セレクタ+セレクタ {プロパティ名:値;}
+            　   適用対象：　同じ階層にある要素同士で、直後に隣接している要素
           -->
           <!-- 回答はここに書いてね -->
           <!-- すでについてるクラスにはstyleを指定しない。styleを付ける場合は自分で新たにクラスをつけること -->
           <div class="q8">
-            
+            <form class="form_wrapper">
+              <div class="form_title">
+                <p>Form Exercise</p>
+              </div>
+              <div class="container clearfix">
+                <div class="content_left">
+                  <ul class="main_contents">
+
+                    <li class="clearfix">
+                      <p class="content_title">名前<span class="caution">*</span></p>
+                      <input class="content_answer reset reseted" type="text" name="name"required>
+                    </li>
+
+                    <li class="clearfix">
+                      <p class="content_title">性別</p>
+                      <div class="content_answer">
+                        <label>
+                          <input class="radio" name="sex" type="radio" value="male">
+                          <span class="radio_text">
+                            男性
+                          </span>
+                        </label>
+                        <!--name属性が同じラジオボタンは、１つだけしか選択できないようになる-->
+                        <label>
+                          <input class="radio" name="sex" type="radio" value="female">
+                          <span class="radio_text">
+                            女性
+                          </span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="clearfix">
+                      <p class="content_title">出身</p>
+                      <div class="from content_answer">
+                        <select  class="select reset" name="hometown">
+                          <option value="tokyo">東京</option>
+                          <option value="saitama">埼玉</option>
+                          <option value="chiba">千葉</option>
+                          <option value="kanagawa">神奈川</option>
+                        </select>
+                      </div>
+                    </li>
+
+                    <li class="clearfix">
+                      <p class="content_title">Eメール<span class="caution">*</span></p>
+                      <input class="content_answer reset reseted" type="email" placeholder="ex) hoge@gmail.com" name="email" required>  <!--必須項目のためrequiredを入力 -->
+                    </li>
+
+                    <li class="clearfix">
+                      <p class="content_title">電話番号</p>
+                      <input class="content_answer reset reseted" type="text" name="tel" placeholder="ex) 08012345678">
+                    </li>
+                      <!-- 既存のチェックは使わずに擬似要素でチェックのフィールドを再現します。
+                      :checkedを使えばチェックされているかどうかでスタイルを変えることができるので、
+                      これをうまく使いましょう。cssでは+（隣接セレクタ）というものも使わなくてはなりませんので、調べてみましょう。--->
+                      <!-- 既存のチェックは使わずに擬似要素でチェックのフィールドを再現します。既存のチェック（非表示）と疑似要素による新チェックを
+                      <lavel for="id名" >でひもづけ、:checkedを使えばチェックされているかどうかでスタイルを変えることができるので、
+                      これをうまく使いましょう。
+                      <label>タグの指定方法には2つあり、1つは<label>タグのfor属性の値と、フォーム部品のid属性の値を同じにすることで両者の関連付け
+                      ができます。もう一つは、<label>～</label>内に部品とラベルを配置するという方法です。
+                      cssでは+（隣接セレクタ）というものも使わなくてはなりませんので、調べてみましょう。--->
+
+                    <li class="clearfix">
+                      <div class="content_answer"><!--共通のスタイルを適用するdiv  -->
+                        <div class="check_age"><!--text-align:rightを適用するdiv  -->
+                          <input class="content_checkbox" id="content_checkbox" type="checkbox" name="twenty" value="true"> <!--非表示だが、疑似要素に結び付ける  -->
+                          <label for="content_checkbox" class="checkbox_text">
+                            20歳以上です
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <input class="btn_submit reset" type="submit" name="" value="送信">
+                </div>
+                <div class="content_right">
+                  <textarea class="right_content reset" name="message" placeholder="何かあれば入力してください。"></textarea>
+                  <!-- cols属性は、一行当たりの最大文字数の目安を指定する際に使用します。 cols属性の値として指定できるのは、1以上の正の整数です。
+                       何も指定しない場合の初期値は20です。rows属性は、表示行数を指定する際に使用します。 rows属性の値として指定できるのは、1以上の正の整数です。
+                       何も指定しない場合の初期値は2です。--->
+                  <!-- name属性は、フォームのデータが送信されるときに，name 属性 の値が付加されており，
+                  　　 対象とする要素のデータに簡単にアクセスできます。--->
+                </div>
+              </div>
+            </form>
           </div>
           <!-- 回答はここに書いてね -->
         </div>

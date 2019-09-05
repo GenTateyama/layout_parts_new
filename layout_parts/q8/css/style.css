@@ -1,5 +1,297 @@
 @charset "UTF-8";
 
 /* 回答はここに書いてね */
+.btn{
+  text-align: center;
+  margin-left: 10px;
+}
+
+.common{
+  background-color: #00bcd4;
+  color:white;
+  cursor: pointer;
+  margin-left: 0px;
+}
+.error{
+  background-color: #ff4081;
+  color:white;
+  cursor: pointer;
+}
+.disabled{
+  cursor: default;
+  background-color: #e5e5e5;
+  color:white;
+}
+.shadow{
+  cursor: pointer;
+  color:#222;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0,0,0,.12);
+}
+.small{
+  display: inline-block;
+  height:26px;
+  font-size:16px;
+  border-radius: 3px;
+  padding: 0 15px;
+  line-height: 26px;
+}
+
+.middle{
+  display: inline-block;
+  height:32px;
+  font-size:20px;
+  border-radius: 5px;
+  padding: 0 20px;
+  line-height: 32px;
+}
+
+.large{
+  display: inline-block;
+  height:38px;
+  font-size:24px;
+  border-radius: 7px;
+  padding: 0 25px;
+  line-height: 38px;
+}
+
+
+
+/* ----------------ここからフォーム------------------------- */
+.clearfix::after{
+  content:"";
+  display: block;
+  clear:both;
+}
+
+.form_wrapper{
+  width:700px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ecf1f2;
+}
+
+.form_title {
+  margin-bottom:20px;
+  position:relative;
+}
+
+.form_title::before{
+ position: absolute;
+ top:50%;
+ left:0%;
+ width:100%;
+ height:1px;
+ background-color: #ccc;
+ /* 空のコンテンツを入れなければ背景が認識されない */
+ content:"";
+}
+
+
+.form_title p{
+  position:relative;/*positionを与えなければ、positonが与えられている上のbefore要素が優先表示され、
+  　　　　　　　　　　　線が重なってしまう。positionを与えて同格にすることで、
+  　　　　　　　　　　　下に存在するこちらの要素が優先表示される */
+  background-color: #ecf1f2;/*これで塗りつぶし*/
+  font-size: 24px;
+  font-weight: bold;
+  position:relative;/*本来その要素がある場所からの相対的な位置*/
+  display: inline-block;
+  padding-right: 10px;
+}
+/*-----------ここまでフォームのタイトル------------*/
+/* --------ここからcontent-left-------------- */
+.content_left{
+   float:left;
+   width:300px;
+}
+
+ul{
+  margin-bottom: 20px;
+}
+.main_contents li{
+  margin-top: 20px;
+}
+.main_contents li:first-child{
+  margin-top: 0px;
+}
+
+.content_title{
+  float:left;
+  width:100px;
+  line-height:25px;
+  text-align: right;
+}
+
+.reset{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline:none;
+  border: none;
+  background: none;
+}
+
+.reseted{
+  background-color: #fff;
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 12px;
+  box-sizing: border-box;
+}
+.reseted:focus{
+  box-shadow: 0 0 7px #00bcd4;
+}
+
+.content_answer{
+  float: right;
+  width: 180px;
+}
+
+.content_age{
+  float: right;
+}
+
+.caution{
+  color:red;
+}
+/*-----ここからラジオボタン-------------*/
+.radio{
+  display: none;
+}
+.radio_text{
+  position:relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px 3px 3px 20px;
+}
+.radio_text::before{
+  position:absolute;
+  top:50%;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: -8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  content:"";
+}
+.radio:checked+.radio_text:after{
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  background-color: #00bcd4;
+  border-radius: 50%;
+  content:"";
+}
+
+
+/*-----ここまでラジオボタン-------------*/
+/*---------ここから出身-----------*/
+.select{
+  width:100%;
+  padding:5px;
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.from{
+  position: relative;
+}
+.from::after{
+  display: block;
+  position: absolute;/*ポジション指定＋要素順で後ろ　のため、前面に出る*/
+  top: 4px;
+  right: 10px;
+  width:8px;
+  height:8px;
+  border-right: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+  transform: rotate(45deg);/*ボーダーを回転表示することでVの字を再現。 rotateは角度の指定を行う場合。*/
+  content: "";
+  pointer-events: none;/*もとのpointerがdefault（矢印）のため、
+  　　　　　　　　　　　　　認識させないことで、親要素のpointer（手）を適用させた*/
+}
+/*---------ここまで出身-----------*/
+/*---------ここからcheckbox-----------*/
+.check_age{
+  text-align: right;
+}
+
+.content_checkbox{
+  display: none;
+}
+
+.checkbox_text{
+  position: relative;
+  display: inline-block;
+  padding-left: 24px;
+}
+.checkbox_text::before{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width:16px;
+  height:16px;
+  margin-top: -9px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  content:"";
+}
+/*チェックされている場合のみペケを表示する*/
+.content_checkbox:checked+.checkbox_text::after{
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  margin-top: -14px;
+  width: 8px;
+  height: 16px;
+  border-right: 3px solid #00bcd4;
+  border-bottom: 3px solid #00bcd4;
+  transform: rotate(45deg);
+  content:"";
+}
+/*---------ここまでcheckbox-----------*/
+/*---------ここから送信ボタン-----------*/
+.btn_submit{
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: #00bcd4;
+  color:#fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
+  float:right;
+}
+
+
+/* --------ここまでcontent-left-------------- */
+
+.content_right{
+ float:right;
+ width:380px;
+}
+.right_content{
+  width: 100%;
+  height: 203px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: white;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+.right_content:focus{
+  box-shadow: 0 0 7px #00bcd4;
+}
 
 /* 回答はここに書いてね */

@@ -36,13 +36,29 @@
                ・transition
                ・position
                ・transform
+               ・word-break（既習）: 表示範囲に合わせて改行するか、単語の切れ目で改行するかなど、文の改行の仕方について指定する際に使用します。
+                 break-all: 言語に関係なく表示範囲に合わせて改行されます。このため単語の途中で改行されることもあります。
                ■この問題で使う大事な擬似クラス
                ・:hover
+               ■この問題で使う大事な属性
+               ・alt属性（オルト属性）→HTMLのimg要素の中に記述される画像の代替となるテキスト情報です。例えばテキストブラウザや音声読み上げブラウザでは、画像ではなくalt属性に記載された内容が
+                                     テキストとして表示、または読み上げられることになります。従って、そうした「画像が閲覧できない環境下でも、その情報が正しく理解される」ような
+                                     代替テキスト情報がalt属性には記述されなければ なりません。
           -->
           <!-- 回答はクラスq9の要素の中に書いてね -->
           <!-- すでについてるクラスにはstyleを指定しない。styleをつける場合は自分で新たにクラスをつけること -->
           <div class="q9">
-            
+            <div class="q9_1_container">
+              <img src="http://gizumo-inc.github.io/sample/front-lesson/layout_parts_new/assets/img/q9/thumb.jpg" class="q9_1_image" width="500" height="333">
+              <div class="hidden_content">
+                <p class="hidden_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                  sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
           </div>
           <!-- 回答はクラスq9の要素の中に書いてね -->
         </div>
@@ -56,14 +72,21 @@
                まずは上部分だけが水色の円をつくってみてください。その後、アニメーションを使って円の角度を変更する処理を書きます。
 
                ■この問題で使う大事なプロパティ
-               ・animation
+               ・animation　→animationプロパティは、要素にキーフレームアニメーションを適用する場合に、 アニメーションについてまとめて
+               　　　　　　　指定する際に使用します。animationプロパティでは、 animation-name、 animation-duration(時間)、
+               　　　　　　　animation-timing-function(ベジェ関数によりタイミング、進行割合を指定)、 animation-delay(いつ始まるか)、
+                            animation-iteration-count(繰り返し回数を指定する)、 animation-direction(アニメーションを交互に反転再生するか)
+               　　　　　　　の6つのプロパティの値を、組み合わせて指定することができます。 省略された値はそれらの初期の値に設定されます。
+
+               ・animation-timing-function →
+
                ・border-radius
                ・transform
           -->
           <!-- 回答はクラスq9の要素の中に書いてね -->
           <!-- すでについてるクラスにはstyleを指定しない。styleをつける場合は自分で新たにクラスをつけること -->
           <div class="q9">
-            
+            <div class="loading_anime"></div>
           </div>
           <!-- 回答はクラスq9の要素の中に書いてね -->
         </div>
