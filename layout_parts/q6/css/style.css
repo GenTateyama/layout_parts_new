@@ -2,11 +2,7 @@
 
 
 /* 回答はここに書いてね */
-
 .q6_1{
-  /*ブロックそのものを中央寄せ*/
-  margin: 0 auto;
-  /*中のテキストを中央寄せ*/
   box-sizing: border-box;
   text-align: center;
   width: 90px;
@@ -14,12 +10,23 @@
   background-color: #e6f2ff;
 }
 
+.content_text-align{
+  text-align: center;
+}
+.text-align{
+  display: inline-block;
+}
 
+.margin{
+  display: block;
+  margin: 0 auto;
+}
+
+/*
+table-row・table-cellのサイズは、tableプロパティの大きさに依存する。
+従って、サイズの基準となる要素にdisplay:tableを適用する。
+*/
 .q6_2_1{
-  /*
-  table-row・table-cellのサイズは、tableプロパティの大きさに依存する。
-  従って、サイズの基準となる要素にdisplay:tableを適用する。
-  */
   display: table;
 }
 
@@ -55,11 +62,11 @@ table関連プロパティの特徴
   height:30px;
   width:110px;
   position:absolute;
-  margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  margin: auto;
 }
 
 .q6_2_4{

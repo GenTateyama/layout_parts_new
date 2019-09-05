@@ -2,16 +2,16 @@
 
 /* 回答はここに書いてね */
 
-.table{
+.table_container{
   padding:20px;
 }
 
-.table_top,.table_bottom{
+.table{
   width:100%;
   display:table;
   margin: 0 auto;
 }
-.table_bottom{
+.table:last-child{
   margin-top: 20px;
 }
 

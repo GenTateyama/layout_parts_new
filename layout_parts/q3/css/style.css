@@ -1,16 +1,13 @@
 @charset "UTF-8";
 
 /* 回答はここに書いてね */
-table{
+.calory_data{
   width:100%;
   table-layout: fixed;
 }
 
-tr{
 
-}
-
-th{
+.calory_data th{
   color: white;
   background-color: #2244aa;
   padding: 10px;
@@ -19,7 +16,7 @@ th{
   line-height: 26px;
 }
 
-td{
+.calory_data td{
   padding: 10px;
   border:1px solid #dedede;
   text-align: center;
@@ -27,11 +24,11 @@ td{
   line-height: 22px;
 }
 
-tr:nth-child(5){
-  border-bottom:2px dashed #000;
+.calory_data tr:last-child{
+  border-top:2px dashed #000;
 }
 
-tr:nth-child(2n+1){
+.calory_data tr:nth-child(2n+1){
   background-color: #ecf1f2;
 }
 
