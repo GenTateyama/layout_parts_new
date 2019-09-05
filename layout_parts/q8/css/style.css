@@ -273,7 +273,10 @@ ul{
   line-height: 26px;
   float:right;
 }
-
+.btn_submit:active{
+  background-color: #fff;
+  color: #00bcd4;
+}
 
 /* --------ここまでcontent-left-------------- */
 

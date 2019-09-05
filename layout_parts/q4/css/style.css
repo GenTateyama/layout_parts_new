@@ -10,9 +10,10 @@
   width:100%;
   display:table;
   margin: 0 auto;
-}
-.table:last-child{
   margin-top: 20px;
+}
+.table:first-child{
+  margin-top: 0px;
 }
 
 .column{

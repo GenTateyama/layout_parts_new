@@ -15,18 +15,36 @@
   line-height: 16px;
 }
 
-.container::after{
-  display: block;
-  position: absolute;/*ポジション指定＋要素順で後ろ　のため、前面に出る*/
-  top: 141px;
-  left: 34.5px;
-  background-color: white;
-  width:25px;
-  height:25px;
-  border-right: 5px solid #222;
-  border-bottom: 5px solid #222;
-  transform: rotate(45deg);/*ボーダーを回転表示することでVの字を再現。 rotateは角度の指定を行う場合。*/
-  content: "";
-
+.container::before,.container::after{
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 20px solid transparent;
+  content:"";
+  }
+.container::before{
+  border-top-color: #222;
+  bottom: -45px;
+  left: 30px;
 }
+.container::after{
+  border-top-color: #fff;
+  bottom: -38px;
+  left: 30px;
+}
+/*三角の作り方その２
+
+display: block;
+position: absolute; ポジション指定＋要素順で後ろ　のため、前面に出る
+top: 141px;
+left: 34.5px;
+background-color: white;
+width:25px;
+height:25px;
+border-right: 5px solid #222;
+border-bottom: 5px solid #222;
+transform: rotate(45deg); ボーダーを回転表示することでVの字を再現。 rotateは角度の指定を行う場合。
+content: "";
+*/
+
 /* 回答はここに書いてね */

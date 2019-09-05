@@ -24,11 +24,11 @@
   line-height: 22px;
 }
 
-.calory_data tr:last-child{
+tbody tr:last-child{
   border-top:2px dashed #000;
 }
 
-.calory_data tr:nth-child(2n+1){
+.calory_data tr:nth-child(2n){
   background-color: #ecf1f2;
 }
 
