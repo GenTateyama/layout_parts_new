@@ -14,7 +14,6 @@
 }
 
 .q7_1_text{
-  display:inline-block;
   float:left;
   /*widthを指定しなければfloatは機能しない*/
   width:225px;
@@ -72,7 +71,6 @@
 /* ------------------------------------ */
 .q7_4_container{
   display: flex;
-  align-items: center;
   justify-content: space-around;
   align-items: flex-end;
 }
@@ -86,13 +84,13 @@
 .q7_5{
   font-size: 0;
 }
-.q7_5_content_small{
+.q7_5_content_fixed{
   width:300px;
   display: inline-block;
   font-size: 16px;
   vertical-align: top;
 }
-.q7_5_content_large{
+.q7_5_content_flexible{
   width:100%;
   display: inline-block;
   padding-left: 350px;

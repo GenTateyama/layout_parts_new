@@ -24,7 +24,7 @@
   line-height: 22px;
 }
 
-tbody tr:last-child{
+.calory_data tbody tr:last-child{
   border-top:2px dashed #000;
 }
 

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* 回答はここに書いてね */
-.container{
+.container {
   position: relative;
   margin: 0 auto;
   width: 500px;
@@ -10,24 +10,24 @@
   border-radius: 30px;
 }
 
-.text{
+.text {
   font-size: 16px;
   line-height: 16px;
 }
 
-.container::before,.container::after{
+.container::before,.container::after {
   position: absolute;
   width: 0px;
   height: 0px;
   border: 20px solid transparent;
   content:"";
-  }
-.container::before{
+}
+.container::before {
   border-top-color: #222;
   bottom: -45px;
   left: 30px;
 }
-.container::after{
+.container::after {
   border-top-color: #fff;
   bottom: -38px;
   left: 30px;
